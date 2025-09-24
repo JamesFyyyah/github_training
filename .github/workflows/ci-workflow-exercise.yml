@@ -29,6 +29,7 @@ jobs:
   # ℹ️ Must run after 'build'
   # ℹ️ Should run only for: main, feature/* and bugfix/*
   test:
+    needs: [build]
     runs-on: ubuntu-latest
     steps:
       - name: Run Tests
@@ -37,6 +38,7 @@ jobs:
   # ℹ️ Must run after 'build'
   # ℹ️ Should run only for branches starting with 'bugfix/'
   bugfix-check:
+    needs: [build]
     runs-on: ubuntu-latest
     steps:
       - name: Run Bugfix Validation
@@ -56,7 +58,7 @@ jobs:
   # ℹ️ Should run only for the 'main' branch
   deploy:
     runs-on: ubuntu-latest
-    needs: [test]
+    needs: [cve-scan]
     steps:
       - name: Deploy
         run: echo "🚀 Deploying ${{ github.ref }}"
