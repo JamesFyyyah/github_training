@@ -42,7 +42,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run Bugfix Validation
-        run: echo "🕵️ Bugfix validation for ${{ github.ref }}". Refname for ${{ github.ref_name }}"
+        run: echo "🕵️ Bugfix validation for ${{ github.ref }}. Refname for ${{ github.ref_name }}"
 
   # ℹ️ Must run after 'test'
   # ℹ️ Should run only for: main, feature/* and bugfix/*
