@@ -49,7 +49,7 @@ jobs:
   cve-scan:
     runs-on: ubuntu-latest
     needs: test
-    if: github.refname == 'main'  # 🔧 This is incorrect — fix it!
+    if: github.ref_name == 'main'  # 🔧 This is incorrect — fix it!
     steps:
       - name: CVE Scan
         run: echo "🛡️ Scanning dependencies..."
