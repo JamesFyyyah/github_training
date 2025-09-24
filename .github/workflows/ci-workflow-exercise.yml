@@ -33,7 +33,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run Tests
-        run: echo "✅ Testing on ${{ github }}"
+        run: echo "✅ Testing on ${{ github.ref }}"
 
   # ℹ️ Must run after 'build'
   # ℹ️ Should run only for branches starting with 'bugfix/'
